@@ -18,10 +18,10 @@ RUN { \
 
 VOLUME /var/www/html
 
-ENV WORDPRESS_VERSION 4.4
+ENV WORDPRESS_VERSION 4.4-ja
 
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
-RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz \
+RUN curl -o wordpress.tar.gz -SL https://ja.wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz \
 	&& tar -xzf wordpress.tar.gz -C /usr/src/ \
 	&& rm wordpress.tar.gz \
 	&& chown -R www-data:www-data /usr/src/wordpress

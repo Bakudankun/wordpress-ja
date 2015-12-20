@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eo pipefail
 
-current="4.4"
+current="4.4-ja"
 
 travisEnv=
 for variant in apache fpm; do
