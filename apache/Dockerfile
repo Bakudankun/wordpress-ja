@@ -1,5 +1,7 @@
 FROM php:5.6-apache
 
+MAINTAINER Bakudankun <bakudankun@gmail.com>
+
 RUN a2enmod rewrite expires
 
 # install the PHP extensions we need
