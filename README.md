@@ -1,5 +1,7 @@
 # Supported tags and respective `Dockerfile` links
 
+[![Join the chat at https://gitter.im/Bakudankun/wordpress-ja](https://badges.gitter.im/Bakudankun/wordpress-ja.svg)](https://gitter.im/Bakudankun/wordpress-ja?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 -	[`4.4.2-apache`, `4.4.2`, `4.4-apache`, `4.4`, `4-apache`, `apache`, `4`, `latest` (*apache/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/apache/Dockerfile)
 -	[`4.4.2-fpm`, `4.4-fpm`, `4-fpm`, `fpm` (*fpm/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/fpm/Dockerfile)
 
