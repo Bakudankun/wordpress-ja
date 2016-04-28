@@ -1,9 +1,9 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`4.5.0-apache`, `4.5.0`, `4.5-apache`, `4.5`, `4-apache`, `apache`, `4`, `latest` (*apache/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/apache/Dockerfile)
--	[`4.5.0-fpm`, `4.5-fpm`, `4-fpm`, `fpm` (*fpm/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/fpm/Dockerfile)
+-	[`4.5.1-apache`, `4.5.1`, `4.5-apache`, `4.5`, `4-apache`, `apache`, `4`, `latest` (*apache/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/apache/Dockerfile)
+-	[`4.5.1-fpm`, `4.5-fpm`, `4-fpm`, `fpm` (*fpm/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/fpm/Dockerfile)
 
-[![](https://badge.imagelayers.io/bakudankun/wordpress-ja:latest.svg)](https://imagelayers.io/?images=bakudankun/wordpress-ja:4.4.2-apache,bakudankun/wordpress-ja:4.4.2-fpm)
+[![](https://badge.imagelayers.io/bakudankun/wordpress-ja:latest.svg)](https://imagelayers.io/?images=bakudankun/wordpress-ja:4.5.1-apache,bakudankun/wordpress-ja:4.5.1-fpm)
 
 # このDockerイメージについて
 
