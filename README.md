@@ -1,9 +1,9 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`4.5.1-apache`, `4.5.1`, `4.5-apache`, `4.5`, `4-apache`, `apache`, `4`, `latest` (*apache/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/apache/Dockerfile)
--	[`4.5.1-fpm`, `4.5-fpm`, `4-fpm`, `fpm` (*fpm/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/fpm/Dockerfile)
+-	[`4.5.2-apache`, `4.5.2`, `4.5-apache`, `4.5`, `4-apache`, `apache`, `4`, `latest` (*apache/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/apache/Dockerfile)
+-	[`4.5.2-fpm`, `4.5-fpm`, `4-fpm`, `fpm` (*fpm/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/fpm/Dockerfile)
 
-[![](https://badge.imagelayers.io/bakudankun/wordpress-ja:latest.svg)](https://imagelayers.io/?images=bakudankun/wordpress-ja:4.5.1-apache,bakudankun/wordpress-ja:4.5.1-fpm)
+[![](https://badge.imagelayers.io/bakudankun/wordpress-ja:latest.svg)](https://imagelayers.io/?images=bakudankun/wordpress-ja:apache,bakudankun/wordpress-ja:fpm)
 
 # このDockerイメージについて
 
@@ -86,7 +86,7 @@ The following Docker Hub features can help with the task of keeping your depende
 
 # Supported Docker versions
 
-This image is officially supported on Docker version 1.10.3.
+This image is officially supported on Docker version 1.11.1.
 
 Support for older versions (down to 1.6) is provided on a best-effort basis.
 
