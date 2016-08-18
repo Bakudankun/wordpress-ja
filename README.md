@@ -1,9 +1,9 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`4.5.2-apache`, `4.5.2`, `4.5-apache`, `4.5`, `4-apache`, `apache`, `4`, `latest` (*apache/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/apache/Dockerfile)
--	[`4.5.2-fpm`, `4.5-fpm`, `4-fpm`, `fpm` (*fpm/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/fpm/Dockerfile)
+-	[`4.6.0-apache`, `4.6-apache`, `4-apache`, `apache`, `4.6.0`, `4.6`, `4`, `latest` (*apache/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/apache/Dockerfile)
+-	[`4.6.0-fpm`, `4.6-fpm`, `4-fpm`, `fpm` (*fpm/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/fpm/Dockerfile)
 
-[![](https://badge.imagelayers.io/bakudankun/wordpress-ja:latest.svg)](https://imagelayers.io/?images=bakudankun/wordpress-ja:apache,bakudankun/wordpress-ja:fpm)
+[![](https://images.microbadger.com/badges/image/bakudankun/wordpress-ja.svg)](https://microbadger.com/#/images/bakudankun/wordpress-ja)
 
 # このDockerイメージについて
 
@@ -58,17 +58,21 @@ $ docker run --name some-wordpress -e WORDPRESS_DB_HOST=10.1.2.3:3306 \
 Example `docker-compose.yml` for `wordpress`:
 
 ```yaml
-wordpress:
-  image: bakudankun/wordpress-ja
-  links:
-    - db:mysql
-  ports:
-    - 8080:80
+version: '2'
 
-db:
-  image: mariadb
-  environment:
-    MYSQL_ROOT_PASSWORD: example
+services:
+
+  wordpress:
+    image: bakudankun/wordpress-ja
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_PASSWORD: example
+
+  mysql:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: example
 ```
 
 Run `docker-compose up`, wait for it to initialize completely, and visit `http://localhost:8080` or `http://host-ip:8080`.
@@ -86,7 +90,7 @@ The following Docker Hub features can help with the task of keeping your depende
 
 # Supported Docker versions
 
-This image is officially supported on Docker version 1.11.1.
+This image is officially supported on Docker version 1.12.0.
 
 Support for older versions (down to 1.6) is provided on a best-effort basis.
 
@@ -103,4 +107,3 @@ If you have any problems with or questions about this image, please contact us t
 You are invited to contribute new features, fixes, or updates, large or small; we are always thrilled to receive pull requests, and do our best to process them as fast as we can.
 
 Before you start to code, we recommend discussing your plans through a [GitHub issue](https://github.com/Bakudankun/wordpress-ja/issues), especially for more ambitious contributions. This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.
- 
