@@ -1,7 +1,7 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`4.6.0-apache`, `4.6-apache`, `4-apache`, `apache`, `4.6.0`, `4.6`, `4`, `latest` (*apache/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/apache/Dockerfile)
--	[`4.6.0-fpm`, `4.6-fpm`, `4-fpm`, `fpm` (*fpm/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/fpm/Dockerfile)
+-	[`4.6.1-apache`, `4.6-apache`, `4-apache`, `apache`, `4.6.1`, `4.6`, `4`, `latest` (*apache/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/apache/Dockerfile)
+-	[`4.6.1-fpm`, `4.6-fpm`, `4-fpm`, `fpm` (*fpm/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/fpm/Dockerfile)
 
 [![](https://images.microbadger.com/badges/image/bakudankun/wordpress-ja.svg)](https://microbadger.com/#/images/bakudankun/wordpress-ja)
 
