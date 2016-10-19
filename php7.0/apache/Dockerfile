@@ -23,9 +23,11 @@ RUN a2enmod rewrite expires
 VOLUME /var/www/html
 
 ENV WORDPRESS_VERSION 4.6.1-ja
+ENV WORDPRESS_MD5 11bddba8eb1abf7aa782ab0171cdb1f3
 
 RUN set -x \
 	&& curl -o wordpress.tar.gz -fSL "https://ja.wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz" \
+	&& echo "$WORDPRESS_MD5 *wordpress.tar.gz" | md5sum -c - \
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
 	&& tar -xzf wordpress.tar.gz -C /usr/src/ \
 	&& rm wordpress.tar.gz \
