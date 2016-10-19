@@ -1,4 +1,4 @@
-FROM php:5.6-fpm
+FROM php:5.6-apache
 
 MAINTAINER Bakudankun <bakudankun@gmail.com>
 
@@ -13,23 +13,27 @@ RUN { \
 		echo 'opcache.memory_consumption=128'; \
 		echo 'opcache.interned_strings_buffer=8'; \
 		echo 'opcache.max_accelerated_files=4000'; \
-		echo 'opcache.revalidate_freq=60'; \
+		echo 'opcache.revalidate_freq=2'; \
 		echo 'opcache.fast_shutdown=1'; \
 		echo 'opcache.enable_cli=1'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
+
+RUN a2enmod rewrite expires
 
 VOLUME /var/www/html
 
 ENV WORDPRESS_VERSION 4.6.1-ja
 
+RUN set -x \
+	&& curl -o wordpress.tar.gz -fSL "https://ja.wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz" \
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
-RUN curl -o wordpress.tar.gz -SL https://ja.wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz \
 	&& tar -xzf wordpress.tar.gz -C /usr/src/ \
 	&& rm wordpress.tar.gz \
 	&& chown -R www-data:www-data /usr/src/wordpress
 
-COPY docker-entrypoint.sh /entrypoint.sh
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
 
-# grr, ENTRYPOINT resets CMD now
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["php-fpm"]
+# ENTRYPOINT resets CMD
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["apache2-foreground"]
