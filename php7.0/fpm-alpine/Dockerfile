@@ -1,20 +1,33 @@
-FROM php:7.0-apache
+FROM php:7.0-fpm-alpine
 
-MAINTAINER Bakudankun <bakudankun@gmail.com>
+# docker-entrypoint.sh dependencies
+RUN apk add --no-cache \
+# in theory, docker-entrypoint.sh is POSIX-compliant, but priority is a working, consistent image
+		bash \
+# BusyBox sed is not sufficient for some of our sed expressions
+		sed
 
 # install the PHP extensions we need
 RUN set -ex; \
 	\
-	apt-get update; \
-	apt-get install -y \
-		libjpeg-dev \
-		libpng12-dev \
+	apk add --no-cache --virtual .build-deps \
+		libjpeg-turbo-dev \
+		libpng-dev \
 	; \
-	rm -rf /var/lib/apt/lists/*; \
 	\
 	docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; \
-	docker-php-ext-install gd mysqli opcache mbstring
-# TODO consider removing the *-dev deps and only keeping the necessary lib* packages
+	docker-php-ext-install gd mysqli opcache mbstring; \
+	\
+	runDeps="$( \
+		scanelf --needed --nobanner --recursive \
+			/usr/local/lib/php/extensions \
+			| awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
+			| sort -u \
+			| xargs -r apk info --installed \
+			| sort -u \
+	)"; \
+	apk add --virtual .wordpress-phpexts-rundeps $runDeps; \
+	apk del .build-deps
 
 # set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php
@@ -27,15 +40,13 @@ RUN { \
 		echo 'opcache.enable_cli=1'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
-RUN a2enmod rewrite expires
-
 VOLUME /var/www/html
 
 ENV WORDPRESS_VERSION 4.7-ja
 ENV WORDPRESS_MD5 a7add7ac70214d8101e2df7211dcc345
 
 RUN set -ex; \
-	curl -o wordpress.tar.gz -fSL "https://ja.wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz"; \
+	curl -o wordpress.tar.gz -fSL "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz"; \
 	echo "$WORDPRESS_MD5 *wordpress.tar.gz" | md5sum -c -; \
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
 	tar -xzf wordpress.tar.gz -C /usr/src/; \
@@ -45,4 +56,4 @@ RUN set -ex; \
 COPY docker-entrypoint.sh /usr/local/bin/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["apache2-foreground"]
+CMD ["php-fpm"]
