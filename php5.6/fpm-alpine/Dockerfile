@@ -46,7 +46,7 @@ ENV WORDPRESS_VERSION 4.7-ja
 ENV WORDPRESS_MD5 a7add7ac70214d8101e2df7211dcc345
 
 RUN set -ex; \
-	curl -o wordpress.tar.gz -fSL "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz"; \
+	curl -o wordpress.tar.gz -fSL "https://ja.wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz"; \
 	echo "$WORDPRESS_MD5 *wordpress.tar.gz" | md5sum -c -; \
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
 	tar -xzf wordpress.tar.gz -C /usr/src/; \
