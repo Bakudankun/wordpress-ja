@@ -1,9 +1,11 @@
 # Supported tags and respective `Dockerfile` links
 
--	[`4.7.0-apache`, `4.7-apache`, `4-apache`, `apache`, `4.7.0`, `4.7`, `4`, `latest`, `4.7.0-php5.6-apache`, `4.7-php5.6-apache`, `4-php5.6-apache`, `php5.6-apache`, `4.7.0-php5.6`, `4.7-php5.6`, `4-php5.6`, `php5.6` (*php5.6/apache/Dockerfile*)](https://github.com/docker-library/wordpress/blob/master/php5.6/apache/Dockerfile)
--	[`4.7.0-fpm`, `4.7-fpm`, `4-fpm`, `fpm`, `4.7.0-php5.6-fpm`, `4.7-php5.6-fpm`, `4-php5.6-fpm`, `php5.6-fpm` (*php5.6/fpm/Dockerfile*)](https://github.com/docker-library/wordpress/blob/master/php5.6/fpm/Dockerfile)
--	[`4.7.0-php7.0-apache`, `4.7-php7.0-apache`, `4-php7.0-apache`, `php7.0-apache`, `4.7.0-php7.0`, `4.7-php7.0`, `4-php7.0`, `php7.0` (*php7.0/apache/Dockerfile*)](https://github.com/docker-library/wordpress/blob/master/php7.0/apache/Dockerfile)
--	[`4.7.0-php7.0-fpm`, `4.7-php7.0-fpm`, `4-php7.0-fpm`, `php7.0-fpm` (*php7.0/fpm/Dockerfile*)](https://github.com/docker-library/wordpress/blob/master/php7.0/fpm/Dockerfile)
+-	[`4.7.0-apache`, `4.7-apache`, `4-apache`, `apache`, `4.7.0`, `4.7`, `4`, `latest`, `4.7.0-php5.6-apache`, `4.7-php5.6-apache`, `4-php5.6-apache`, `php5.6-apache`, `4.7.0-php5.6`, `4.7-php5.6`, `4-php5.6`, `php5.6` (*php5.6/apache/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/php5.6/apache/Dockerfile)
+-	[`4.7.0-fpm`, `4.7-fpm`, `4-fpm`, `fpm`, `4.7.0-php5.6-fpm`, `4.7-php5.6-fpm`, `4-php5.6-fpm`, `php5.6-fpm` (*php5.6/fpm/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/php5.6/fpm/Dockerfile)
+-	[`4.7.0-fpm-alpine`, `4.7-fpm-alpine`, `4-fpm-alpine`, `fpm-alpine`, `4.7.0-php5.6-fpm-alpine`, `4.7-php5.6-fpm-alpine`, `4-php5.6-fpm-alpine`, `php5.6-fpm-alpine` (*php5.6/fpm-alpine/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/php5.6/fpm-alpine/Dockerfile)
+-	[`4.7.0-php7.0-apache`, `4.7-php7.0-apache`, `4-php7.0-apache`, `php7.0-apache`, `4.7.0-php7.0`, `4.7-php7.0`, `4-php7.0`, `php7.0` (*php7.0/apache/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/php7.0/apache/Dockerfile)
+-	[`4.7.0-php7.0-fpm`, `4.7-php7.0-fpm`, `4-php7.0-fpm`, `php7.0-fpm` (*php7.0/fpm/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/php7.0/fpm/Dockerfile)
+-	[`4.7.0-php7.0-fpm-alpine`, `4.7-php7.0-fpm-alpine`, `4-php7.0-fpm-alpine`, `php7.0-fpm-alpine` (*php7.0/fpm-alpine/Dockerfile*)](https://github.com/Bakudankun/wordpress-ja/blob/master/php7.0/fpm-alpine/Dockerfile)
 
 [![](https://images.microbadger.com/badges/image/bakudankun/wordpress-ja.svg)](https://microbadger.com/#/images/bakudankun/wordpress-ja)
 
@@ -92,7 +94,7 @@ The following Docker Hub features can help with the task of keeping your depende
 
 # Supported Docker versions
 
-This image is officially supported on Docker version 1.12.3.
+This image is officially supported on Docker version 1.12.5.
 
 Support for older versions (down to 1.6) is provided on a best-effort basis.
 
